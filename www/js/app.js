@@ -21,7 +21,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
 	//one signal code
 	var notificationOpenedCallback = function(jsonData) {
-		console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
+		//console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
+		window.location = 'index.html#/app/offers.html';
 	};
 
 	window.plugins.OneSignal.init("1eb095de-4015-4a67-899b-e38da22ae0df",
