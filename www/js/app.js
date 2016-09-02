@@ -6,7 +6,7 @@ var globalip = "45.79.145.23/truhome.co/public_html/phonegapservices";
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,$state) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -22,7 +22,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 	//one signal code
 	var notificationOpenedCallback = function(jsonData) {
 		//console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
-		window.location = 'index.html#/app/offers.html';
+		$state.go('app.offers');
 	};
 
 	window.plugins.OneSignal.init("1eb095de-4015-4a67-899b-e38da22ae0df",
