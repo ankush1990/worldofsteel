@@ -17,23 +17,13 @@
  under the License.
  */
 
-//
-//  AppDelegate.m
-//  Worldofsteel
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
-//
+#import <UIKit/UIKit.h>
+#import "CDVUIWebViewEngine.h"
 
-#import "AppDelegate.h"
-#import "MainViewController.h"
+@interface CDVUIWebViewNavigationDelegate : NSObject <UIWebViewDelegate>
 
-@implementation AppDelegate
+@property (nonatomic, weak) CDVPlugin* enginePlugin;
 
-- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
-{
-    self.viewController = [[MainViewController alloc] init];
-    return [super application:application didFinishLaunchingWithOptions:launchOptions];
-}
+- (instancetype)initWithEnginePlugin:(CDVPlugin*)enginePlugin;
 
 @end

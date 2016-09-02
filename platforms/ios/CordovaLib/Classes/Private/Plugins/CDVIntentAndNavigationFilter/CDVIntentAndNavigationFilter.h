@@ -17,23 +17,17 @@
  under the License.
  */
 
-//
-//  AppDelegate.m
-//  Worldofsteel
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
-//
+#import "CDVPlugin.h"
+#import "CDVWhitelist.h"
 
-#import "AppDelegate.h"
-#import "MainViewController.h"
+typedef NS_ENUM(NSInteger, CDVIntentAndNavigationFilterValue) {
+    CDVIntentAndNavigationFilterValueIntentAllowed,
+    CDVIntentAndNavigationFilterValueNavigationAllowed,
+    CDVIntentAndNavigationFilterValueNoneAllowed
+};
 
-@implementation AppDelegate
+@interface CDVIntentAndNavigationFilter : CDVPlugin <NSXMLParserDelegate>
 
-- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
-{
-    self.viewController = [[MainViewController alloc] init];
-    return [super application:application didFinishLaunchingWithOptions:launchOptions];
-}
++ (CDVIntentAndNavigationFilterValue) filterUrl:(NSURL*)url intentsWhitelist:(CDVWhitelist*)intentsWhitelist navigationsWhitelist:(CDVWhitelist*)navigationsWhitelist;
 
 @end

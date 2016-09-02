@@ -17,23 +17,13 @@
  under the License.
  */
 
-//
-//  AppDelegate.m
-//  Worldofsteel
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
-//
+#import <Foundation/Foundation.h>
 
-#import "AppDelegate.h"
-#import "MainViewController.h"
+@interface NSMutableArray (QueueAdditions)
 
-@implementation AppDelegate
-
-- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
-{
-    self.viewController = [[MainViewController alloc] init];
-    return [super application:application didFinishLaunchingWithOptions:launchOptions];
-}
+- (id)cdv_pop;
+- (id)cdv_queueHead;
+- (id)cdv_dequeue;
+- (void)cdv_enqueue:(id)obj;
 
 @end

@@ -17,23 +17,22 @@
  under the License.
  */
 
-//
-//  AppDelegate.m
-//  Worldofsteel
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
-//
+#import "CDVPlugin+Resources.h"
 
-#import "AppDelegate.h"
-#import "MainViewController.h"
+@implementation CDVPlugin (CDVPluginResources)
 
-@implementation AppDelegate
-
-- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
+- (NSString*)pluginLocalizedString:(NSString*)key
 {
-    self.viewController = [[MainViewController alloc] init];
-    return [super application:application didFinishLaunchingWithOptions:launchOptions];
+    NSBundle* bundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:NSStringFromClass([self class]) ofType:@"bundle"]];
+
+    return [bundle localizedStringForKey:(key) value:nil table:nil];
+}
+
+- (UIImage*)pluginImageResource:(NSString*)name
+{
+    NSString* resourceIdentifier = [NSString stringWithFormat:@"%@.bundle/%@", NSStringFromClass([self class]), name];
+
+    return [UIImage imageNamed:resourceIdentifier];
 }
 
 @end

@@ -17,23 +17,11 @@
  under the License.
  */
 
-//
-//  AppDelegate.m
-//  Worldofsteel
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
-//
+#import "CDVPlugin.h"
+#import "CDVWebViewEngineProtocol.h"
 
-#import "AppDelegate.h"
-#import "MainViewController.h"
+@interface CDVUIWebViewEngine : CDVPlugin <CDVWebViewEngineProtocol>
 
-@implementation AppDelegate
-
-- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
-{
-    self.viewController = [[MainViewController alloc] init];
-    return [super application:application didFinishLaunchingWithOptions:launchOptions];
-}
+@property (nonatomic, strong, readonly) id <UIWebViewDelegate> uiWebViewDelegate;
 
 @end

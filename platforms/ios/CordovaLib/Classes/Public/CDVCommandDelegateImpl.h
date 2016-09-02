@@ -17,23 +17,20 @@
  under the License.
  */
 
-//
-//  AppDelegate.m
-//  Worldofsteel
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
-//
+#import <UIKit/UIKit.h>
+#import "CDVCommandDelegate.h"
 
-#import "AppDelegate.h"
-#import "MainViewController.h"
+@class CDVViewController;
+@class CDVCommandQueue;
 
-@implementation AppDelegate
-
-- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
-{
-    self.viewController = [[MainViewController alloc] init];
-    return [super application:application didFinishLaunchingWithOptions:launchOptions];
+@interface CDVCommandDelegateImpl : NSObject <CDVCommandDelegate>{
+    @private
+    __weak CDVViewController* _viewController;
+    NSRegularExpression* _callbackIdPattern;
+    @protected
+    __weak CDVCommandQueue* _commandQueue;
+    BOOL _delayResponses;
 }
-
+- (id)initWithViewController:(CDVViewController*)viewController;
+- (void)flushCommandQueueWithDelayedJs;
 @end

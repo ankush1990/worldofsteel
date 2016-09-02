@@ -17,23 +17,16 @@
  under the License.
  */
 
-//
-//  AppDelegate.m
-//  Worldofsteel
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
-//
-
-#import "AppDelegate.h"
-#import "MainViewController.h"
-
-@implementation AppDelegate
-
-- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
-{
-    self.viewController = [[MainViewController alloc] init];
-    return [super application:application didFinishLaunchingWithOptions:launchOptions];
-}
-
-@end
+#import "CDVAvailability.h"
+#import "CDVAvailabilityDeprecated.h"
+#import "CDVAppDelegate.h"
+#import "CDVPlugin.h"
+#import "CDVPluginResult.h"
+#import "CDVViewController.h"
+#import "CDVCommandDelegate.h"
+#import "CDVURLProtocol.h"
+#import "CDVInvokedUrlCommand.h"
+#import "CDVWhitelist.h"
+#import "CDVScreenOrientationDelegate.h"
+#import "CDVTimer.h"
+#import "CDVUserAgentUtil.h"

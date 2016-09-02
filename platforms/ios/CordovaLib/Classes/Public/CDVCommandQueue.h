@@ -17,23 +17,23 @@
  under the License.
  */
 
-//
-//  AppDelegate.m
-//  Worldofsteel
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
-//
+#import <Foundation/Foundation.h>
 
-#import "AppDelegate.h"
-#import "MainViewController.h"
+@class CDVInvokedUrlCommand;
+@class CDVViewController;
 
-@implementation AppDelegate
+@interface CDVCommandQueue : NSObject
 
-- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
-{
-    self.viewController = [[MainViewController alloc] init];
-    return [super application:application didFinishLaunchingWithOptions:launchOptions];
-}
+@property (nonatomic, readonly) BOOL currentlyExecuting;
+
+- (id)initWithViewController:(CDVViewController*)viewController;
+- (void)dispose;
+
+- (void)resetRequestId;
+- (void)enqueueCommandBatch:(NSString*)batchJSON;
+
+- (void)fetchCommandsFromJs;
+- (void)executePending;
+- (BOOL)execute:(CDVInvokedUrlCommand*)command;
 
 @end

@@ -17,23 +17,18 @@
  under the License.
  */
 
-//
-//  AppDelegate.m
-//  Worldofsteel
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
-//
+#import <Foundation/Foundation.h>
 
-#import "AppDelegate.h"
-#import "MainViewController.h"
+extern NSString* const kCDVDefaultWhitelistRejectionString;
 
-@implementation AppDelegate
+@interface CDVWhitelist : NSObject
 
-- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
-{
-    self.viewController = [[MainViewController alloc] init];
-    return [super application:application didFinishLaunchingWithOptions:launchOptions];
-}
+@property (nonatomic, copy) NSString* whitelistRejectionFormatString;
+
+- (id)initWithArray:(NSArray*)array;
+- (BOOL)schemeIsAllowed:(NSString*)scheme;
+- (BOOL)URLIsAllowed:(NSURL*)url;
+- (BOOL)URLIsAllowed:(NSURL*)url logFailure:(BOOL)logFailure;
+- (NSString*)errorStringForURL:(NSURL*)url;
 
 @end

@@ -17,23 +17,19 @@
  under the License.
  */
 
-//
-//  AppDelegate.m
-//  Worldofsteel
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
-//
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-#import "AppDelegate.h"
-#import "MainViewController.h"
+@interface NSDictionary (CordovaPreferences)
 
-@implementation AppDelegate
+- (id)cordovaSettingForKey:(NSString*)key;
+- (BOOL)cordovaBoolSettingForKey:(NSString*)key defaultValue:(BOOL)defaultValue;
+- (CGFloat)cordovaFloatSettingForKey:(NSString*)key defaultValue:(CGFloat)defaultValue;
 
-- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
-{
-    self.viewController = [[MainViewController alloc] init];
-    return [super application:application didFinishLaunchingWithOptions:launchOptions];
-}
+@end
+
+@interface NSMutableDictionary (CordovaPreferences)
+
+- (void)setCordovaSetting:(id)value forKey:(NSString*)key;
 
 @end

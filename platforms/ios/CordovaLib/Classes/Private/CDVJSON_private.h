@@ -17,23 +17,15 @@
  under the License.
  */
 
-//
-//  AppDelegate.m
-//  Worldofsteel
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
-//
+@interface NSArray (CDVJSONSerializingPrivate)
+- (NSString*)cdv_JSONString;
+@end
 
-#import "AppDelegate.h"
-#import "MainViewController.h"
+@interface NSDictionary (CDVJSONSerializingPrivate)
+- (NSString*)cdv_JSONString;
+@end
 
-@implementation AppDelegate
-
-- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
-{
-    self.viewController = [[MainViewController alloc] init];
-    return [super application:application didFinishLaunchingWithOptions:launchOptions];
-}
-
+@interface NSString (CDVJSONSerializingPrivate)
+- (id)cdv_JSONObject;
+- (id)cdv_JSONFragment;
 @end
