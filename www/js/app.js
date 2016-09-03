@@ -23,7 +23,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 	var notificationOpenedCallback = function(jsonData) {
 		//console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
 		
-		alert(jsonData.data.foo);
+		//alert(jsonData.data.foo);
 		var data = { origin:'indore', quantity:37, thickness:37, width:37, length:37, currency:37, price:37, title:37};
 		$state.go('app.offers-detail',data);
 	};
