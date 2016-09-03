@@ -76,7 +76,7 @@ angular.module('starter.controllers', [])
 	$scope.length = $stateParams.length;
 	$scope.currency = $stateParams.currency;
 	$scope.price = $stateParams.price;
-	$scope.title = $stateParams.title;
+	$scope.heading = $stateParams.heading;
 })
 
 .controller('contactCtrl', function($scope) {

@@ -19,10 +19,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+	
 	//one signal code
 	var notificationOpenedCallback = function(jsonData) {
 		//console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
-		var data = { origin:jsonData.additionalData.origin, quantity:jsonData.additionalData.quantity, thickness:jsonData.additionalData.thickness, width:jsonData.additionalData.width, length:jsonData.additionalData.length, currency:jsonData.additionalData.currency, price:jsonData.additionalData.price, title:jsonData.additionalData.title};
+		var data = { origin:jsonData.additionalData.origin, quantity:jsonData.additionalData.quantity, thickness:jsonData.additionalData.thickness, width:jsonData.additionalData.width, length:jsonData.additionalData.length, currency:jsonData.additionalData.currency, price:jsonData.additionalData.price,heading:jsonData.additionalData.heading};
 		$state.go('app.offers-detail',data);
 	};
 
@@ -80,7 +81,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 	.state('app.offers-detail', {
-      url: "/offers-detail/:origin?quantity?thickness?width?length?currency?title?price",
+      url: "/offers-detail/:origin?quantity?thickness?width?length?currency?heading?price",
       views: {
         'menuContent' :{
           templateUrl: "templates/offers-detail.html",
