@@ -22,9 +22,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 	//one signal code
 	var notificationOpenedCallback = function(jsonData) {
 		//console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
-		
-		alert(jsonData.additionalData.foo);
-		var data = { origin:'indore', quantity:37, thickness:37, width:37, length:37, currency:37, price:37, title:jsonData.additionalData.foo};
+		var data = { origin:jsonData.additionalData.origin, quantity:jsonData.additionalData.quantity, thickness:jsonData.additionalData.thickness, width:jsonData.additionalData.width, length:jsonData.additionalData.length, currency:jsonData.additionalData.currency, price:jsonData.additionalData.price, title:jsonData.additionalData.title};
 		$state.go('app.offers-detail',data);
 	};
 
