@@ -22,8 +22,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 	//one signal code
 	var notificationOpenedCallback = function(jsonData) {
 		//console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
-		var response = JSON.parse(jsonData);
-		alert(response.data.foo);
+		
+		alert(jsonData.data.foo);
 		var data = { origin:'indore', quantity:37, thickness:37, width:37, length:37, currency:37, price:37, title:37};
 		$state.go('app.offers-detail',data);
 	};
@@ -131,7 +131,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 			var myLatLng = {lat: 27.9769145, lng: -82.5590481};
 			var mapOptions = {
 			  center: new google.maps.LatLng(27.9769145, -82.5590481),
-			  zoom: 16,
+			  zoom: 14,
 			  mapTypeId: google.maps.MapTypeId.ROADMAP
 			};
 			var map = new google.maps.Map($element[0], mapOptions);

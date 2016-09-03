@@ -53,6 +53,19 @@ angular.module('starter.controllers', [])
 		$scope.response = response;
 		$ionicLoading.hide();
 	});
+	
+	$scope.doRefresh = function() {
+		var data_parameters = "usertype="+temp;
+		$http.post("http://worldofsteel.com/sysdata/offermobile.php",data_parameters, {
+			headers: {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
+		})
+		.success(function(response) {
+			console.log(response);
+			$scope.response = response;
+			$scope.$broadcast('scroll.refreshComplete');
+		});
+  	};
+	
 })
 
 .controller('offers_detailCtrl', function($scope,$stateParams,$http) {
