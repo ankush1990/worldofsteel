@@ -22,10 +22,10 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 	//one signal code
 	var notificationOpenedCallback = function(jsonData) {
 		//console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
-		
-		alert(jsonData);
+		var response = JSON.parse(jsonData);
+		alert(response.data.foo);
 		var data = { origin:'indore', quantity:37, thickness:37, width:37, length:37, currency:37, price:37, title:37};
-		$state.go('offers-detail',data);
+		$state.go('app.offers-detail',data);
 	};
 
 	window.plugins.OneSignal.init("1eb095de-4015-4a67-899b-e38da22ae0df",
