@@ -6,7 +6,7 @@ var globalip = "45.79.145.23/truhome.co/public_html/phonegapservices";
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers'])
 
-.run(function($ionicPlatform,$state) {
+.run(function($ionicPlatform,$state,$ionicPopup) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -20,6 +20,26 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       StatusBar.styleDefault();
     }
 	
+	//show a exit app confirm modal 
+	$ionicPlatform.registerBackButtonAction(function(e) {
+		e.preventDefault();
+
+	  	function showConfirm() {
+			var confirmPopup = $ionicPopup.confirm({
+				title: '<strong>Worldofsteel</strong>',
+				template: 'Are you sure you want to exit?'
+			});
+	
+			confirmPopup.then(function(res) {
+		  		if (res) {
+					ionic.Platform.exitApp();
+		  		} else {
+					// Don't close
+		  		}
+			});
+	 	}
+	});
+
 	//one signal code
 	var notificationOpenedCallback = function(jsonData) {
 		//console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
