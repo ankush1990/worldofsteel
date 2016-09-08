@@ -21,25 +21,19 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
 	
 	//show a exit app confirm modal 
-	$ionicPlatform.registerBackButtonAction(function(e) {
-		e.preventDefault();
-
-	  	function showConfirm() {
-			var confirmPopup = $ionicPopup.confirm({
-				title: '<strong>Worldofsteel</strong>',
-				template: 'Are you sure you want to exit?'
-			});
-	
-			confirmPopup.then(function(res) {
-		  		if (res) {
+	$ionicPlatform.registerBackButtonAction(function(event) {
+    	if (true) { // your check here
+      		$ionicPopup.confirm({
+				title: 'Worldofsteel',
+				template: 'are you sure you want to exit?'
+      		}).then(function(res) {
+				if (res) {
 					ionic.Platform.exitApp();
-		  		} else {
-					// Don't close
-		  		}
-			});
-	 	}
-	});
-
+				}
+      		})
+    	}
+  	},100);
+	
 	//one signal code
 	var notificationOpenedCallback = function(jsonData) {
 		//console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
