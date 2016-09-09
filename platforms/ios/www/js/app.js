@@ -25,7 +25,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     	if (true) { // your check here
       		$ionicPopup.confirm({
 				title: 'Worldofsteel',
-				template: 'are you sure you want to exit?'
+				template: 'Are you sure you want to exit?'
       		}).then(function(res) {
 				if (res) {
 					ionic.Platform.exitApp();

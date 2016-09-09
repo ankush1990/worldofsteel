@@ -1,10 +1,13 @@
-<ion-view view-title="List of Flat Steel - International Offer">
-  <ion-content>
-  	<ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
-    <ion-list>
-      <ion-item ng-repeat="data in response" ui-sref="app.offers-detail({heading:data.Offer,origin:data.Origin,quantity:data.Quantity,thickness:data.Thickness,width:data.Width,length:data.Length,currency:data.Currency,price:data.UnitPrice})">
-        {{data.Offer}}
-      </ion-item>
-    </ion-list>
-  </ion-content>
+<ion-view view-title="Worldofsteel">
+	<ion-header-bar class="bar-subheader">
+    	<h4 class="text-center ">List of Flat Steel - International Offer</h4>
+  	</ion-header-bar>
+    <ion-content>
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
+        <ion-list>
+          <ion-item ng-repeat="data in response" ui-sref="app.offers-detail({heading:data.Offer,origin:data.Origin,quantity:data.Quantity,thickness:data.Thickness,width:data.Width,length:data.Length,currency:data.Currency,price:data.UnitPrice})">
+            {{data.Offer}}
+          </ion-item>
+        </ion-list>
+    </ion-content>
 </ion-view>
