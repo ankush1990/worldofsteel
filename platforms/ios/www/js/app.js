@@ -6,7 +6,7 @@ var globalip = "45.79.145.23/truhome.co/public_html/phonegapservices";
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers'])
 
-.run(function($ionicPlatform,$state,$ionicPopup) {
+.run(function($ionicPlatform,$state,$ionicPopup,$ionicHistory) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -20,24 +20,30 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       StatusBar.styleDefault();
     }
 	
-	//show a exit app confirm modal 
+	//show a confirm modal on exit app 
 	$ionicPlatform.registerBackButtonAction(function(event) {
-    	if (true) { // your check here
-      		$ionicPopup.confirm({
-				title: 'Worldofsteel',
-				template: 'Are you sure you want to exit?'
-      		}).then(function(res) {
-				if (res) {
-					ionic.Platform.exitApp();
-				}
-      		})
+    	if(true) { // your check here
+			// check if there is back opiton to go back in application 
+			if ($ionicHistory.backView()) {
+				$ionicHistory.backView().go();
+ 			}
+			else{
+				$ionicPopup.confirm({
+					title: 'Worldofsteel',
+					template: 'Are you sure you want to exit?'
+				}).then(function(res) {
+					if (res) {
+						ionic.Platform.exitApp();
+					}
+				})
+			}
     	}
   	},100);
 	
 	//one signal code
 	var notificationOpenedCallback = function(jsonData) {
 		//console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
-		var data = { origin:jsonData.additionalData.origin, quantity:jsonData.additionalData.quantity, thickness:jsonData.additionalData.thickness, width:jsonData.additionalData.width, length:jsonData.additionalData.length, currency:jsonData.additionalData.currency, price:jsonData.additionalData.price,heading:jsonData.additionalData.heading};
+		var data = { origin:jsonData.additionalData.origin, quantity:jsonData.additionalData.quantity, thickness:jsonData.additionalData.thickness, width:jsonData.additionalData.width, length:jsonData.additionalData.length, currency:jsonData.additionalData.currency, price:jsonData.additionalData.price,heading:jsonData.additionalData.heading,classification:jsonData.additionalData.classification,steel_type:jsonData.additionalData.steel_type,forms:jsonData.additionalData.forms};
 		$state.go('app.offers-detail',data);
 	};
 
@@ -95,7 +101,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 	.state('app.offers-detail', {
-      url: "/offers-detail/:origin?quantity?thickness?width?length?currency?heading?price",
+      url: "/offers-detail/:origin?quantity?thickness?width?length?currency?heading?price?classification?steel_type?forms",
       views: {
         'menuContent' :{
           templateUrl: "templates/offers-detail.html",

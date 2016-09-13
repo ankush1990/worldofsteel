@@ -77,6 +77,9 @@ angular.module('starter.controllers', [])
 	$scope.currency = $stateParams.currency;
 	$scope.price = $stateParams.price;
 	$scope.heading = $stateParams.heading;
+	$scope.classification = $stateParams.classification;
+	$scope.steel_type = $stateParams.steel_type;
+	$scope.forms = $stateParams.forms;
 })
 
 .controller('contactCtrl', function($scope) {
