@@ -147,9 +147,9 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 		},
 		link: function ($scope, $element, $attr) {
 		  function initialize() {
-			var myLatLng = {lat: 27.9769145, lng: -82.5590481};
+			var myLatLng = {lat:18.9492888, lng: 72.8403256};
 			var mapOptions = {
-			  center: new google.maps.LatLng(27.9769145, -82.5590481),
+			  center: new google.maps.LatLng(18.9492888, 72.8403256),
 			  zoom: 14,
 			  mapTypeId: google.maps.MapTypeId.ROADMAP
 			};
@@ -161,7 +161,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 				content:"Hello World!"
 			});
 			var infowindow = new google.maps.InfoWindow({
-			  content:"5424 Ginger Cove Dr"
+			  content:"World Of Steel"
 			});
 			infowindow.open(map,marker);
 			
