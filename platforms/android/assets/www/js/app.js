@@ -29,7 +29,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
  			}
 			else{
 				$ionicPopup.confirm({
-					title: 'Worldofsteel',
+					title: 'World Of Steel',
 					template: 'Are you sure you want to exit?'
 				}).then(function(res) {
 					if (res) {
