@@ -47,7 +47,9 @@ angular.module('starter.controllers', [])
 	if(window.Connection) {
 		//if connection is not there
 		if(navigator.connection.type == Connection.NONE) {
-			$scope.response = global_offers_data;
+			if(window.localStorage.getItem("offers_offline_data") !== undefined) {
+           		$scope.response = window.localStorage.getItem("offers_offline_data");
+        	} 
 		}
 		else{
 			// if connection is there
@@ -60,7 +62,7 @@ angular.module('starter.controllers', [])
 			.success(function(response) {
 				console.log(response);
 				$scope.response = response;
-				global_offers_data = response;
+				window.localStorage.setItem("offers_offline_data",response);
 				$ionicLoading.hide();
 			});
 		}
@@ -71,7 +73,9 @@ angular.module('starter.controllers', [])
 		if(window.Connection) {
 		//if connection is not there
 			if(navigator.connection.type == Connection.NONE) {
-				$scope.response = global_offers_data;
+				if(window.localStorage.getItem("offers_offline_data") !== undefined) {
+           			$scope.response = window.localStorage.getItem("offers_offline_data");
+        		} 
 			}
 			else{
 				// if connection is there
