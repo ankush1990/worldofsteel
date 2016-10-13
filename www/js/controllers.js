@@ -62,7 +62,7 @@ angular.module('starter.controllers', [])
 			.success(function(response) {
 				console.log(response);
 				$scope.response = response;
-				window.localStorage.setItem("offers_offline_data",response);
+				window.localStorage.setItem("offers_offline_data",angular.toJson(response));
 				$ionicLoading.hide();
 			});
 		}
@@ -75,6 +75,7 @@ angular.module('starter.controllers', [])
 			if(navigator.connection.type == Connection.NONE) {
 				if(window.localStorage.getItem("offers_offline_data") !== undefined) {
            			$scope.response = window.localStorage.getItem("offers_offline_data");
+					$scope.$broadcast('scroll.refreshComplete'); // to hide the spinner of pull to refresh
         		} 
 			}
 			else{
@@ -86,7 +87,7 @@ angular.module('starter.controllers', [])
 				.success(function(response) {
 					console.log(response);
 					$scope.response = response;
-					$scope.$broadcast('scroll.refreshComplete');
+					$scope.$broadcast('scroll.refreshComplete'); // to hide the spinner of pull to refresh
 				});
 			}
 		}
