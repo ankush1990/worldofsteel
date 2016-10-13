@@ -9,6 +9,9 @@
     "installed_plugins": {
         "onesignal-cordova-plugin": {
             "PACKAGE_NAME": "com.phonegap.root"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.phonegap.root"
         }
     },
     "dependent_plugins": {}

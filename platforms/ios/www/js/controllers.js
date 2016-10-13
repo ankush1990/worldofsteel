@@ -42,30 +42,51 @@ angular.module('starter.controllers', [])
 })
 
 .controller('offersCtrl', function($scope,$state,$window,$ionicPopup,$http,$ionicLoading) {
-	$ionicLoading.show({template: '<ion-spinner icon="crescent"></ion-spinner>'});
-	var temp = "";
-	var data_parameters = "usertype="+temp;
-	$http.post("http://worldofsteel.com/sysdata/offermobile.php",data_parameters, {
-		headers: {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
-	})
-	.success(function(response) {
-		console.log(response);
-		$scope.response = response;
-		$ionicLoading.hide();
-	});
+	
+	//check internt connection
+	if(window.Connection) {
+		//if connection is not there
+		if(navigator.connection.type == Connection.NONE) {
+			$scope.response = global_offers_data;
+		}
+		else{
+			// if connection is there
+			$ionicLoading.show({template: '<ion-spinner icon="crescent"></ion-spinner>'});
+			var temp = "";
+			var data_parameters = "usertype="+temp;
+			$http.post("http://worldofsteel.com/sysdata/offermobile.php",data_parameters, {
+				headers: {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
+			})
+			.success(function(response) {
+				console.log(response);
+				$scope.response = response;
+				global_offers_data = response;
+				$ionicLoading.hide();
+			});
+		}
+	}
+	
 	
 	$scope.doRefresh = function() {
-		var data_parameters = "usertype="+temp;
-		$http.post("http://worldofsteel.com/sysdata/offermobile.php",data_parameters, {
-			headers: {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
-		})
-		.success(function(response) {
-			console.log(response);
-			$scope.response = response;
-			$scope.$broadcast('scroll.refreshComplete');
-		});
-  	};
-	
+		if(window.Connection) {
+		//if connection is not there
+			if(navigator.connection.type == Connection.NONE) {
+				$scope.response = global_offers_data;
+			}
+			else{
+				// if connection is there
+				var data_parameters = "usertype="+temp;
+				$http.post("http://worldofsteel.com/sysdata/offermobile.php",data_parameters, {
+					headers: {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
+				})
+				.success(function(response) {
+					console.log(response);
+					$scope.response = response;
+					$scope.$broadcast('scroll.refreshComplete');
+				});
+			}
+		}
+	};
 })
 
 .controller('offers_detailCtrl', function($scope,$stateParams,$http) {
