@@ -48,7 +48,7 @@ angular.module('starter.controllers', [])
 		//if connection is not there
 		if(navigator.connection.type == Connection.NONE) {
 			if(window.localStorage.getItem("offers_offline_data") !== undefined) {
-           		$scope.response = window.localStorage.getItem("offers_offline_data");
+           		$scope.response = angular.fromJson(window.localStorage.getItem("offers_offline_data"));
         	} 
 		}
 		else{
@@ -74,7 +74,7 @@ angular.module('starter.controllers', [])
 		//if connection is not there
 			if(navigator.connection.type == Connection.NONE) {
 				if(window.localStorage.getItem("offers_offline_data") !== undefined) {
-           			$scope.response = window.localStorage.getItem("offers_offline_data");
+           			$scope.response = angular.fromJson(window.localStorage.getItem("offers_offline_data"));
 					$scope.$broadcast('scroll.refreshComplete'); // to hide the spinner of pull to refresh
         		} 
 			}
