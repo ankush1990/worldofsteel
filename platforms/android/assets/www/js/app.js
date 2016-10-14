@@ -1,5 +1,5 @@
 // Ionic Starter App
-var globalip = "45.79.145.23/truhome.co/public_html/phonegapservices";
+var globalip = "http://makerits.com/worldofsteel/get_hint.php";
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
@@ -121,6 +121,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         'menuContent' :{
           templateUrl: "templates/offers-detail.html",
 		  controller: "offers_detailCtrl"
+        }
+      }
+    })
+	.state('app.offers-detail-response', {
+      url: '/offers-detail-response/:offer_refno',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/offers-detail-response.html',
+          controller: 'offers_response_Ctrl'
         }
       }
     })

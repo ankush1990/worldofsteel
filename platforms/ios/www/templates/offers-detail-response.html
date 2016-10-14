@@ -1,0 +1,35 @@
+<ion-view view-title="World Of Steel">
+	<ion-header-bar class="bar-subheader">
+    	<h4 class="text-center ">Send Response</h4>
+  	</ion-header-bar>
+	<ion-content>
+
+	<div class="list">
+    	<label class="item item-input">
+		  <span class="input-label" style="width:135px;"><b>Offer Ref No</b></span> :&nbsp;
+		  <span class="item-text-wrap">{{offer_refno}}</span>
+        </label>
+		<label class="item item-input">
+		  <span class="input-label" style="width:135px;"><b>Name *</b></span> :&nbsp;
+		  <input type="text" ng-model="user.name">
+		</label>
+		<label class="item item-input">
+		  <span class="input-label" style="width:135px;"><b>E-mail Address *</b></span> :&nbsp;
+		  <input type="text" ng-model="user.email">
+		</label>
+        <label class="item item-input">
+		  <span class="input-label" style="width:135px;"><b>Mobile</b></span> :&nbsp;
+		  <input type="tel" ng-model="user.mobile">
+		</label>
+        <label class="item item-input">
+		  <span class="input-label" style="width:135px;"><b>Comment *</b></span> :&nbsp;
+		  <textarea ng-model="user.comment" rows="6"></textarea>
+		</label>
+    </div>
+	<div>
+		<button class="button button-block button-assertive" ng-click="send_mail(user)">
+		  Send
+		</button>
+	</div>
+	</ion-content>
+  </ion-view>
