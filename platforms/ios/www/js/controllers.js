@@ -44,14 +44,14 @@ angular.module('starter.controllers', [])
 .controller('offersCtrl', function($scope,$state,$window,$ionicPopup,$http,$ionicLoading) {
 	
 	//check internt connection
-	/*if(window.Connection) {
+	if(window.Connection) {
 		//if connection is not there
 		if(navigator.connection.type == Connection.NONE) {
 			if(window.localStorage.getItem("offers_offline_data") !== undefined) {
            		$scope.response = angular.fromJson(window.localStorage.getItem("offers_offline_data"));
         	} 
 		}
-		else{*/
+		else{
 			// if connection is there
 			$ionicLoading.show({template: '<ion-spinner icon="crescent"></ion-spinner>'});
 			var temp = "";
@@ -65,8 +65,8 @@ angular.module('starter.controllers', [])
 				window.localStorage.setItem("offers_offline_data",angular.toJson(response));
 				$ionicLoading.hide();
 			});
-		//}
-	//}
+		}
+	}
 	
 	
 	$scope.doRefresh = function() {
