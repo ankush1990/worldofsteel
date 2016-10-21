@@ -125,7 +125,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 	.state('app.offers-detail-response', {
-      url: '/offers-detail-response/:offer_refno',
+      url: '/offers-detail-response/:offer_refno?origin?classification?quantity?steel_type?forms?thickness?width?length?currency?price',
       views: {
         'menuContent': {
           templateUrl: 'templates/offers-detail-response.html',
