@@ -113,7 +113,7 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('offers_response_Ctrl', function($scope,$stateParams,$http,$state,$ionicPopup) {
+.controller('offers_response_Ctrl', function($scope,$stateParams,$http,$state,$ionicPopup,$ionicHistory) {
 	$scope.offer_refno = $stateParams.offer_refno;
 	
 	$scope.user = {name : '',email : '',mobile : '',comment : ''};
@@ -194,6 +194,10 @@ angular.module('starter.controllers', [])
 									},
 								  ]
 								})
+								$ionicHistory.nextViewOptions({
+									disableBack: true
+								});
+								$state.go('app.offers');
 							}
 							else{
 								$ionicPopup.show({
