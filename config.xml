@@ -33,7 +33,7 @@
   <gap:plugin name="org.apache.cordova.statusbar" source="npm" />
   <gap:plugin name="org.apache.cordova.battery-status" source="npm" />
   <gap:plugin name="org.apache.cordova.camera" source="npm"/>
-  <gap:plugin name="org.apache.cordova.console" version="0.2.11"/>
+  <gap:plugin name="org.apache.cordova.console" source="npm"/>
   <gap:plugin name="org.apache.cordova.contacts" version="0.2.13"/>
   <gap:plugin name="org.apache.cordova.device" source="npm"/>
   <gap:plugin name="org.apache.cordova.device-motion" version="0.2.10"/>
