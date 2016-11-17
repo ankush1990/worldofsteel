@@ -45,10 +45,10 @@
   <gap:plugin name="org.apache.cordova.globalization" source="npm"/>
   <gap:plugin name="org.apache.cordova.inappbrowser" source="npm"/>
   <gap:plugin name="org.apache.cordova.media" source="npm"/>
-  <gap:plugin name="org.apache.cordova.media-capture" version="0.3.3"/>
+  <gap:plugin name="org.apache.cordova.media-capture" source="npm"/>
   <gap:plugin name="org.apache.cordova.network-information" source="npm"/>
   <gap:plugin name="org.apache.cordova.splashscreen" source="npm"/>
-  <gap:plugin name="org.apache.cordova.vibration" version="0.3.11"/>
+  <gap:plugin name="org.apache.cordova.vibration" source="npm"/>
   <plugin name="com.onesignal.plugins.onesignal" spec="1.5.0" source="pgb" />
   <icon gap:platform="android" gap:qualifier="ldpi" src="res/icon/android/icon-36-ldpi.png"/>
   <icon gap:platform="android" gap:qualifier="mdpi" src="res/icon/android/icon-48-mdpi.png"/>
