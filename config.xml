@@ -42,7 +42,7 @@
   <gap:plugin name="org.apache.cordova.file" source="npm"/>
   <gap:plugin name="org.apache.cordova.file-transfer" source="npm"/>
   <gap:plugin name="org.apache.cordova.geolocation" source="npm"/>
-  <gap:plugin name="org.apache.cordova.globalization" version="0.3.1"/>
+  <gap:plugin name="org.apache.cordova.globalization" source="npm"/>
   <gap:plugin name="org.apache.cordova.inappbrowser" version="0.3.3"/>
   <gap:plugin name="org.apache.cordova.media" version="0.2.13"/>
   <gap:plugin name="org.apache.cordova.media-capture" version="0.3.3"/>
