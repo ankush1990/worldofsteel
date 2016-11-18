@@ -21,6 +21,63 @@
     <feature name="NetworkStatus">
         <param name="ios-package" value="CDVConnection" />
     </feature>
+    <feature name="Battery">
+        <param name="ios-package" value="CDVBattery" />
+    </feature>
+    <feature name="Device">
+        <param name="ios-package" value="CDVDevice" />
+    </feature>
+    <feature name="Console">
+        <param name="ios-package" value="CDVLogger" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="ios-package" value="CDVSplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="ios-package" value="CDVStatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Keyboard">
+        <param name="ios-package" onload="true" value="IonicKeyboard" />
+    </feature>
+    <feature name="Camera">
+        <param name="ios-package" value="CDVCamera" />
+    </feature>
+    <feature name="Contacts">
+        <param name="ios-package" value="CDVContacts" />
+    </feature>
+    <feature name="Accelerometer">
+        <param name="ios-package" value="CDVAccelerometer" />
+    </feature>
+    <feature name="Compass">
+        <param name="ios-package" value="CDVCompass" />
+    </feature>
+    <feature name="Notification">
+        <param name="ios-package" value="CDVNotification" />
+    </feature>
+    <feature name="File">
+        <param name="ios-package" value="CDVFile" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="FileTransfer">
+        <param name="ios-package" value="CDVFileTransfer" />
+    </feature>
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation" />
+    </feature>
+    <feature name="Globalization">
+        <param name="ios-package" value="CDVGlobalization" />
+    </feature>
+    <feature name="Media">
+        <param name="ios-package" value="CDVSound" />
+    </feature>
+    <feature name="Capture">
+        <param name="ios-package" value="CDVCapture" />
+    </feature>
+    <feature name="Vibration">
+        <param name="ios-package" value="CDVVibration" />
+    </feature>
     <name>Worldofsteel</name>
     <description>
        Worldofsteel application.
@@ -29,27 +86,6 @@
         Makerits Software Solutions
     </author>
     <content src="index.html" />
-    <gap:plugin name="com.ionic.keyboard" source="npm" version="1.0.7" />
-    <gap:plugin name="org.apache.cordova.statusbar" source="npm" />
-    <gap:plugin name="org.apache.cordova.battery-status" source="npm" />
-    <gap:plugin name="org.apache.cordova.camera" source="npm" />
-    <gap:plugin name="org.apache.cordova.console" source="npm" />
-    <gap:plugin name="org.apache.cordova.contacts" source="npm" />
-    <gap:plugin name="org.apache.cordova.device" source="npm" />
-    <gap:plugin name="org.apache.cordova.device-motion" source="npm" />
-    <gap:plugin name="org.apache.cordova.device-orientation" source="npm" />
-    <gap:plugin name="org.apache.cordova.dialogs" source="npm" />
-    <gap:plugin name="org.apache.cordova.file" source="npm" />
-    <gap:plugin name="org.apache.cordova.file-transfer" source="npm" />
-    <gap:plugin name="org.apache.cordova.geolocation" source="npm" />
-    <gap:plugin name="org.apache.cordova.globalization" source="npm" />
-    <gap:plugin name="org.apache.cordova.inappbrowser" source="npm" />
-    <gap:plugin name="org.apache.cordova.media" source="npm" />
-    <gap:plugin name="org.apache.cordova.media-capture" source="npm" />
-    <gap:plugin name="org.apache.cordova.network-information" source="npm" />
-    <gap:plugin name="org.apache.cordova.splashscreen" source="npm" />
-    <gap:plugin name="org.apache.cordova.vibration" source="npm" />
-    <gap:plugin name="onesignal-cordova-plugin" source="npm" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="res/icon/android/icon-36-ldpi.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="res/icon/android/icon-48-mdpi.png" />
     <icon gap:platform="android" gap:qualifier="hdpi" src="res/icon/android/icon-72-hdpi.png" />
@@ -90,6 +126,9 @@
     <preference name="PageLength" value="0" />
     <preference name="PaginationBreakingMode" value="page" />
     <preference name="PaginationMode" value="unpaginated" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarStyle" value="blacktranslucent" />
+    <preference name="CameraUsesGeolocation" value="false" />
     <preference name="permissions" value="none" />
     <preference name="phonegap-version" value="3.7.0" />
     <preference name="orientation" value="portrait" />
@@ -99,10 +138,8 @@
     <preference name="prerendered-icon" value="true" />
     <preference name="stay-in-webview" value="false" />
     <preference name="ios-statusbarstyle" value="default" />
-    <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#1d4461" />
     <preference name="SplashScreenDelay" value="5000" />
-    <preference name="StatusBarStyle" value="blacktranslucent" />
     <preference name="detect-data-types" value="true" />
     <preference name="exit-on-suspend" value="false" />
     <preference name="show-splash-screen-spinner" value="true" />

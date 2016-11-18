@@ -18,7 +18,65 @@
         },
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.phonegap.root"
+        },
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "com.phonegap.root"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.phonegap.root"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.phonegap.root"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.phonegap.root"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.phonegap.root"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.phonegap.root"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.phonegap.root"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.phonegap.root"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "com.phonegap.root"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "com.phonegap.root"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.phonegap.root"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.phonegap.root"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.phonegap.root"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.phonegap.root"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.phonegap.root"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "com.phonegap.root"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "com.phonegap.root"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.phonegap.root"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.phonegap.root"
+        }
+    }
 }

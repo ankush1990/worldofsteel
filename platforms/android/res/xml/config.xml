@@ -13,6 +13,62 @@
     <feature name="NetworkStatus">
         <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
     </feature>
+    <feature name="Battery">
+        <param name="android-package" value="org.apache.cordova.batterystatus.BatteryListener" />
+    </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Keyboard">
+        <param name="android-package" value="io.ionic.keyboard.IonicKeyboard" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <feature name="Contacts">
+        <param name="android-package" value="org.apache.cordova.contacts.ContactManager" />
+    </feature>
+    <feature name="Accelerometer">
+        <param name="android-package" value="org.apache.cordova.devicemotion.AccelListener" />
+    </feature>
+    <feature name="Compass">
+        <param name="android-package" value="org.apache.cordova.deviceorientation.CompassListener" />
+    </feature>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <allow-navigation href="cdvfile:*" />
+    <feature name="FileTransfer">
+        <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
+    </feature>
+    <feature name="Geolocation">
+        <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
+    </feature>
+    <feature name="Globalization">
+        <param name="android-package" value="org.apache.cordova.globalization.Globalization" />
+    </feature>
+    <feature name="Media">
+        <param name="android-package" value="org.apache.cordova.media.AudioHandler" />
+    </feature>
+    <feature name="Capture">
+        <param name="android-package" value="org.apache.cordova.mediacapture.Capture" />
+    </feature>
+    <feature name="Vibration">
+        <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
+    </feature>
     <name>Worldofsteel</name>
     <description>
        Worldofsteel application.
@@ -21,27 +77,6 @@
         Makerits Software Solutions
     </author>
     <content src="index.html" />
-    <gap:plugin name="com.ionic.keyboard" source="npm" version="1.0.7" />
-    <gap:plugin name="org.apache.cordova.statusbar" source="npm" />
-    <gap:plugin name="org.apache.cordova.battery-status" source="npm" />
-    <gap:plugin name="org.apache.cordova.camera" source="npm" />
-    <gap:plugin name="org.apache.cordova.console" source="npm" />
-    <gap:plugin name="org.apache.cordova.contacts" source="npm" />
-    <gap:plugin name="org.apache.cordova.device" source="npm" />
-    <gap:plugin name="org.apache.cordova.device-motion" source="npm" />
-    <gap:plugin name="org.apache.cordova.device-orientation" source="npm" />
-    <gap:plugin name="org.apache.cordova.dialogs" source="npm" />
-    <gap:plugin name="org.apache.cordova.file" source="npm" />
-    <gap:plugin name="org.apache.cordova.file-transfer" source="npm" />
-    <gap:plugin name="org.apache.cordova.geolocation" source="npm" />
-    <gap:plugin name="org.apache.cordova.globalization" source="npm" />
-    <gap:plugin name="org.apache.cordova.inappbrowser" source="npm" />
-    <gap:plugin name="org.apache.cordova.media" source="npm" />
-    <gap:plugin name="org.apache.cordova.media-capture" source="npm" />
-    <gap:plugin name="org.apache.cordova.network-information" source="npm" />
-    <gap:plugin name="org.apache.cordova.splashscreen" source="npm" />
-    <gap:plugin name="org.apache.cordova.vibration" source="npm" />
-    <gap:plugin name="onesignal-cordova-plugin" source="npm" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="res/icon/android/icon-36-ldpi.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="res/icon/android/icon-48-mdpi.png" />
     <icon gap:platform="android" gap:qualifier="hdpi" src="res/icon/android/icon-72-hdpi.png" />
