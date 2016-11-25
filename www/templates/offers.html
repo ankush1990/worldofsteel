@@ -5,7 +5,7 @@
     <ion-content>
         <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
         <ion-list>
-          <ion-item ng-repeat="data in response" ui-sref="app.offers-detail({heading:data.Offer,origin:data.Origin,quantity:data.Quantity,thickness:data.Thickness,width:data.Width,length:data.Length,currency:data.Currency,price:data.UnitPrice,classification:data.Classification,steel_type:data.Steel_Type,forms:data.Forms})">
+          <ion-item ng-repeat="data in response" ui-sref="app.offers-detail({heading:data.Offer,origin:data.Origin,quantity:data.Quantity,thickness:data.Thickness,width:data.Width,length:data.Length,currency:data.Currency,price:data.UnitPrice,classification:data.Classification,steel_type:data.Steel_Type,forms:data.Forms,CoilWeight:data.CoilWeight})">
             {{data.Offer}}
           </ion-item>
         </ion-list>

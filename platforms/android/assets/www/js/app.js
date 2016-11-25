@@ -116,7 +116,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 	.state('app.offers-detail', {
-      url: "/offers-detail/:origin?quantity?thickness?width?length?currency?heading?price?classification?steel_type?forms",
+      url: "/offers-detail/:origin?quantity?thickness?width?length?currency?heading?price?classification?steel_type?forms?CoilWeight",
       views: {
         'menuContent' :{
           templateUrl: "templates/offers-detail.html",
@@ -125,7 +125,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 	.state('app.offers-detail-response', {
-      url: '/offers-detail-response/:offer_refno?origin?classification?quantity?steel_type?forms?thickness?width?length?currency?price',
+      url: '/offers-detail-response/:offer_refno?origin?classification?quantity?steel_type?forms?thickness?width?length?currency?price?CoilWeight',
       views: {
         'menuContent': {
           templateUrl: 'templates/offers-detail-response.html',

@@ -1,9 +1,9 @@
 <ion-view title="Worldofsteel">
-	<ion-header-bar class="bar-subheader">
-    	<h4 class="text-center ">{{heading}}</h4>
-  	</ion-header-bar>
 	<ion-content class="center">
 	 	<div class="list">
+        	<div class="row item item-text-wrap text-center">
+              <div class="col col-100"><b>{{heading}}</b></div>
+            </div>
 			<div class="row item">
               <div class="col col-40"><b>Origin</b></div>
               <div class="col col-10">:</div>
@@ -40,6 +40,11 @@
               <div class="col col-50">{{width}}</div>
             </div>
             <div class="row item">
+              <div class="col col-40"><b>CoilWeight</b></div>
+              <div class="col col-10">:</div>
+              <div class="col col-50">{{CoilWeight}}</div>
+            </div>
+            <div class="row item">
               <div class="col col-40"><b>Length(mm)</b></div>
               <div class="col col-10">:</div>
               <div class="col col-50">{{length}}</div>
@@ -58,7 +63,7 @@
         <div class = "row">
          	<div class = "col col-30"></div>
             <div class = "col col-45"> 
-            	<button class="button button-small button-assertive" ng-click="sendresponse(heading,origin,classification,quantity,steel_type,forms,thickness,width,length,currency,price)">
+            	<button class="button button-small button-assertive" ng-click="sendresponse(heading,origin,classification,quantity,steel_type,forms,thickness,width,length,currency,price,CoilWeight)">
           			Send Response
         		</button>
             </div>

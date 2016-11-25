@@ -106,9 +106,10 @@ angular.module('starter.controllers', [])
 	$scope.classification = $stateParams.classification;
 	$scope.steel_type = $stateParams.steel_type;
 	$scope.forms = $stateParams.forms;
+	$scope.CoilWeight = $stateParams.CoilWeight;
 	
-	$scope.sendresponse = function(value,origin,classification,quantity,steel_type,forms,thickness,width,length,currency,price){
-		$state.go("app.offers-detail-response",{offer_refno: value,origin: origin,classification: classification,quantity: quantity,steel_type: steel_type,forms: forms,thickness: thickness,width: width,length: length,currency: currency,price: price});
+	$scope.sendresponse = function(value,origin,classification,quantity,steel_type,forms,thickness,width,length,currency,price,CoilWeight){
+		$state.go("app.offers-detail-response",{offer_refno: value,origin: origin,classification: classification,quantity: quantity,steel_type: steel_type,forms: forms,thickness: thickness,width: width,length: length,currency: currency,price: price,CoilWeight: CoilWeight});
 	}
 })
 
@@ -176,7 +177,7 @@ angular.module('starter.controllers', [])
 					else
 					{
 						var action = "send_email";
-						var data_parameters = "action="+action+"&user_email="+email+ "&name="+name+ "&mobile="+mobile+ "&comment="+comment+ "&offer_refno="+offer_refno+ "&origin="+$stateParams.origin+ "&classification="+$stateParams.classification+ "&quantity="+$stateParams.quantity+ "&steel_type="+$stateParams.steel_type+ "&forms="+$stateParams.forms+ "&thickness="+$stateParams.thickness+ "&width="+$stateParams.width+ "&length="+$stateParams.length+ "&currency="+$stateParams.currency+ "&price="+$stateParams.price;
+						var data_parameters = "action="+action+"&user_email="+email+ "&name="+name+ "&mobile="+mobile+ "&comment="+comment+ "&offer_refno="+offer_refno+ "&origin="+$stateParams.origin+ "&classification="+$stateParams.classification+ "&quantity="+$stateParams.quantity+ "&steel_type="+$stateParams.steel_type+ "&forms="+$stateParams.forms+ "&thickness="+$stateParams.thickness+ "&width="+$stateParams.width+ "&length="+$stateParams.length+ "&currency="+$stateParams.currency+ "&price="+$stateParams.price+ "&CoilWeight="+$stateParams.CoilWeight;
 						$http.post(globalip,data_parameters, {
 							headers: {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
 						})
