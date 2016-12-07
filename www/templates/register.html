@@ -1,0 +1,40 @@
+<ion-view view-title="World Of Steel" class="main-bg-color">
+	<ion-header-bar class="bar-subheader">
+    	<h4 class="text-center ">Registration</h4>
+  	</ion-header-bar>
+  <ion-content>
+    <!-- Logo -->
+    <div class="padding text-center">
+      	<p class="text-center" style="margin-top:30px;">
+	  		<img src="img/icon.png" height="120px;" width="120px;">
+		</p>
+    </div>
+
+    <!-- Signup form -->
+    <div class="list list-inset no-bg">
+      <label class="item item-input dark-input">
+        <input type="text" placeholder="Email" ng-model="user.register_email">
+      </label>
+	  <label class="item item-input dark-input">
+        <input type="text" placeholder="Your Name" ng-model="user.register_name">
+      </label>
+      <label class="item item-input dark-input">
+        <input type="tel" placeholder="Mobile" ng-model="user.mobile_number">
+      </label>
+      <label class="item item-input dark-input">
+        <input type="password" placeholder="Password" ng-model="user.register_password">
+      </label>
+	  <label class="item item-input dark-input">
+        <input type="password" placeholder="Confirm Password" ng-model="user.register_cpassword">
+      </label>
+    </div>
+
+    <div class="padding text-center">
+      <button class="button button-block login-button" ng-click="register(user)">
+        Create account
+      </button>
+      <a href="#/app/login" class="positive">Login</a>
+    </div>
+
+  </ion-content>
+</ion-view>

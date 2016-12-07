@@ -93,7 +93,28 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: '/login',
     views: {
       'menuContent': {
-        templateUrl: 'templates/login.html'
+        templateUrl: 'templates/login.html',
+		controller: 'AuthCtrl'
+      }
+    }
+  })
+  
+  .state('app.register', {
+    url: '/register',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/register.html',
+		controller: 'AuthCtrl'
+      }
+    }
+  })
+  
+  .state('app.forgot', {
+    url: '/forgot',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/forgot.html',
+		controller: 'AuthCtrl'
       }
     }
   })
